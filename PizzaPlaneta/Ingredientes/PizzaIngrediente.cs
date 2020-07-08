@@ -4,9 +4,9 @@ namespace PizzaPlaneta.Ingredientes
 {
 	public abstract class PizzaIngrediente : IPizza
 	{
-		private IPizza pizza;
-		private string nombre;
-		private double precio;
+		protected IPizza pizza;
+		protected string nombre;
+		protected double precio;
 
 		public PizzaIngrediente(IPizza pizza, string nombre)
 		{
