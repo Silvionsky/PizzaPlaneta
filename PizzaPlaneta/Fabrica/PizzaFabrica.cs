@@ -16,6 +16,12 @@ namespace PizzaPlaneta.Fabrica
 				case "grande":
 					return new PizzaBasica(nombre);
 					break;
+				case "masaclasica":
+					return new MasaClasicaIngrediente(pizza);
+					break;
+				case "masaartesanal":
+					return new MasaArtesanalIngrediente(pizza);
+					break;
 				case "queso":
 					return new QuesoIngrediente(pizza);
 					break;

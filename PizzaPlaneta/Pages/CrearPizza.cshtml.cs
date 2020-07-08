@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PizzaPlaneta.Pizza;
+using PizzaPlaneta.Fabrica;
 
 namespace PizzaPlaneta.Pages
 {
 	public class CrearPizzaModel : PageModel
-	{
+	{	
+		public CrearPizzaModel()
+		{
+		
+		}
+
 		public void OnGet()
 		{
 
