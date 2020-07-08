@@ -25,6 +25,12 @@ namespace PizzaPlaneta.Fabrica
 				case "queso":
 					return new QuesoIngrediente(pizza);
 					break;
+				case "hongos":
+					return new HongosIngrediente(pizza);
+					break;
+				case "tomate":
+					return new TomateIngrediente(pizza);
+					break;
 				default:
 					return null;
 					break;
