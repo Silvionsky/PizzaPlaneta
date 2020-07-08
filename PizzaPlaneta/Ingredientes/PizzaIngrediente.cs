@@ -21,7 +21,7 @@ namespace PizzaPlaneta.Ingredientes
 
 		public double GetPrecio()
 		{
-			return this.precio;
+			return precio;
 		}
 		public double GetPrecioTotal()
 		{
