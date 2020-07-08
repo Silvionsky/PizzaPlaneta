@@ -2,7 +2,7 @@
 
 namespace PizzaPlaneta.CalculoPrecio
 {
-	interface IEstrategiaCalcularPrecio
+	public interface IEstrategiaCalcularPrecio
 	{
 		double ObtenerPrecioTotal(Orden orden);
 	}
