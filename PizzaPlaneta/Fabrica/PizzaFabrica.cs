@@ -31,6 +31,18 @@ namespace PizzaPlaneta.Fabrica
 				case "tomate":
 					return new TomateIngrediente(pizza);
 					break;
+				case "albahaca":
+					return new AlbahacaIngrediente(pizza);
+					break;
+				case "jamon":
+					return new JamonIngrediente(pizza);
+					break;
+				case "carne":
+					return new CarneIngrediente(pizza);
+					break;
+				case "salchicha":
+					return new SalchichaIngrediente(pizza);
+					break;
 				default:
 					return null;
 					break;
