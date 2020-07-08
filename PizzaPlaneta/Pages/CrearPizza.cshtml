@@ -26,7 +26,7 @@
 				<li><a data-toggle="pill" href="#ingredientes"><span class="badge">2</span>Ingredientes</a></li>
 				<li><a data-toggle="pill" href="#direccion"><span class="badge">3</span>Dirección de entrega</a></li>
 			</ul>
-			<form action="https://webhook.site/b45b45c2-f655-4e69-805b-421bdbd2ff37" method="post">
+			<form method="post">
 				<div class="tab-content">
 					<div id="tamanoymasa" class="tab-pane fade in active">
 						<div class="panel panel-default">
@@ -52,7 +52,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="panel-footer"></div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary tamanoymasasiguiente">Siguiente<i class="glyphicon glyphicon-chevron-right"></i></button></div>
 						</div>
 					</div>
 					<div id="ingredientes" class="tab-pane fade">
@@ -74,7 +74,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="panel-footer"></div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary ingredientesatras" style="margin-right:5px"><i class="glyphicon glyphicon-chevron-left"></i>Atras</button><button type="button" class="float-right btn btn-primary ingredientessiguiente">Siguiente<i class="glyphicon glyphicon-chevron-right"></i></button></div>
 						</div>
 					</div>
 					<div id="direccion" class="tab-pane fade">
@@ -88,12 +88,30 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-footer text-right"><button class="float-right btn btn-success">Ver orden<i class="glyphicon glyphicon-shopping-cart"></i></button></div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary direccionatras" style="margin-right:5px"><i class="glyphicon glyphicon-chevron-left"></i>Atras</button><button class="float-right btn btn-success">Ver orden<i class="glyphicon glyphicon-shopping-cart"></i></button></div>
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
-</main>
+	</main>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(".tamanoymasasiguiente").click(function () {
+		$('.nav-pills li:eq(1) a').tab('show');
+	})
+
+	$(".ingredientessiguiente").click(function () {
+		$('.nav-pills li:eq(2) a').tab('show');
+	})
+
+	$(".ingredientesatras").click(function () {
+		$('.nav-pills li:eq(0) a').tab('show');
+	})
+
+	$(".direccionatras").click(function () {
+		$('.nav-pills li:eq(1) a').tab('show');
+	})
+</script>
 </html>
