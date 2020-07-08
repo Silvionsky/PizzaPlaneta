@@ -4,6 +4,8 @@
 	{
 		string GetIngredientes();
 
+		double GetPrecioTotal();
+
 		double GetPrecio();
 	}
 }
