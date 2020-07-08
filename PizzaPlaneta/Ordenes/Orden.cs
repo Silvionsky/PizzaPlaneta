@@ -1,6 +1,6 @@
 ﻿using PizzaPlaneta.Pizza;
 
-namespace PizzaPlaneta.Orden
+namespace PizzaPlaneta.Ordenes
 {
 	public class Orden
 	{
