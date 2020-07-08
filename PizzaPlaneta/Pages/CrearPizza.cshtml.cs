@@ -15,6 +15,8 @@ namespace PizzaPlaneta.Pages
 
 		[BindProperty] public List<string> ingredientes { set; get; }
 
+		[BindProperty] public string direccion { set; get; }
+
 		public ActionResult OnPost()
 		{
 			List<string> pedido = new List<string>();
@@ -23,7 +25,6 @@ namespace PizzaPlaneta.Pages
 			pedido.AddRange(ingredientes);
 
 			IPizza pizza = null;
-
 			foreach (string nombre in pedido)
 			{
 				pizza = PizzaFabrica.CrearPizza(pizza, nombre);
