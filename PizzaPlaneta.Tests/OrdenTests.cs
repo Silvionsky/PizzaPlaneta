@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PizzaPlaneta.Fabrica;
 using PizzaPlaneta.Pizza;
-using PizzaPlaneta.CalculoPrecio;
 using PizzaPlaneta.Ordenes;
 
 namespace PizzaPlaneta.Tests
