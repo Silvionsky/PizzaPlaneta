@@ -6,7 +6,7 @@ namespace PizzaPlaneta.Ingredientes
 	{
 		public MasaArtesanalIngrediente(IPizza pizza) : base(pizza, "Masa artesanal")
 		{
-			this.precio = 3.0;
+			this.precio = 3000;
 		}
 	}
 }

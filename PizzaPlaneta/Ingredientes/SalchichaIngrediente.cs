@@ -6,7 +6,7 @@ namespace PizzaPlaneta.Ingredientes
 	{
 		public SalchichaIngrediente(IPizza pizza) : base(pizza, "Salchicha")
 		{
-			this.precio = 0.3;
+			this.precio = 700;
 		}
 	}
 }

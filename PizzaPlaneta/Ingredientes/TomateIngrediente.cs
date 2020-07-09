@@ -4,9 +4,9 @@ namespace PizzaPlaneta.Ingredientes
 {
 	public class TomateIngrediente : PizzaIngrediente
 	{
-		public TomateIngrediente(IPizza pizza) : base(pizza, "tomate")
+		public TomateIngrediente(IPizza pizza) : base(pizza, "Tomate")
 		{
-			this.precio = 0.1;
+			this.precio = 500;
 		}
 	}
 }

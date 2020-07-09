@@ -32,13 +32,13 @@ namespace PizzaPlaneta.Pizza
 			switch (this.tamano)
 			{
 				case "pequena":
-					precio = 1.0;			
+					precio = 3500;			
 					break;
 				case "mediana":
-					precio = 2.5;
+					precio = 5000;
 					break;
 				case "grande":
-					precio = 5.0;
+					precio = 9000;
 					break;
 			}
 
