@@ -1,0 +1,18 @@
+﻿@page
+@model PizzaPlaneta.Pages.VerOrdenModel
+@{
+    ViewData["Title"] = "Pizza Planta: Confirme su orden!";
+}
+
+<h2>Su orden</h2>
+
+<div class="panel panel-primary">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Desglose</div>
+	<!-- List group -->
+	<ul class="list-group">
+		<li class="list-group-item">Precio Total: @Model.precioRegular</li>
+		<li class="list-group-item text-primary">Precio Total: @Model.precioConIva con IVA</li>
+	</ul>
+</div>
+

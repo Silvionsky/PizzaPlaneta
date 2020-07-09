@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PizzaPlaneta.Pizza;
 using PizzaPlaneta.Fabrica;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using PizzaPlanenta.Utilidades;
+using PizzaPlaneta.Ordenes;
 
 namespace PizzaPlaneta.Pages
 {
@@ -17,24 +18,9 @@ namespace PizzaPlaneta.Pages
 
 		[BindProperty] public string direccion { set; get; }
 
-		public ActionResult OnPost()
+		public void OnPost()
 		{
-			List<string> pedido = new List<string>();
-			pedido.Add(tamano);
-			pedido.Add(masa);
-			pedido.AddRange(ingredientes);
 
-			IPizza pizza = null;
-			foreach (string nombre in pedido)
-			{
-				pizza = PizzaFabrica.CrearPizza(pizza, nombre);
-			}
-
-			double costoTotal = pizza.GetPrecioTotal();
-			string ingredientesTotal = pizza.GetIngredientes();
-		
-
-			return Page();
 		}
 	}
 }

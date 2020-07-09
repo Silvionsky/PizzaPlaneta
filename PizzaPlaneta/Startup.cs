@@ -30,7 +30,8 @@ namespace PizzaPlaneta
 				options.MinimumSameSitePolicy = SameSiteMode.None;
 			});
 
-
+			services.AddSession();
+			services.AddMemoryCache();
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
 
@@ -48,7 +49,7 @@ namespace PizzaPlaneta
 
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
-
+			app.UseSession();
 			app.UseMvc();
 		}
 	}

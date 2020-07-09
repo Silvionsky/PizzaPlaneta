@@ -6,5 +6,11 @@ namespace PizzaPlaneta.Ordenes
 	{
 		public IPizza pizza { get; set; }
 		public string direccion { get; set; }
+
+		public Orden(IPizza pizza, string direccion)
+		{
+			this.pizza = pizza;
+			this.direccion = direccion;
+		}
 	}
 }
