@@ -42,12 +42,12 @@ body {
 	background-repeat: no-repeat;
 }
 
-	.pizza-img h1 {
-		font-weight: 400;
-		font-size: 3.5em;
-		background: white;
-		opacity: .6;
-		position: relative;
-		width: calc(100% + 64px);
-		left: -32px;
-	}
+.pizza-img h1 {
+	font-weight: 400;
+	font-size: 3.5em;
+	background: white;
+	opacity: .6;
+	position: relative;
+	width: calc(100% + 64px);
+	left: -32px;
+}

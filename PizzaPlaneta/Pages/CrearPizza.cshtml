@@ -1,0 +1,129 @@
+﻿@page
+@model VerOrdenModel
+@{
+	ViewData["Title"] = "Pizza Planeta: Cree su pizza!";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="container">
+		<div class="jumbotron pizza-img d-none d-md-block">
+			<div class="container">
+				<h1 class="text-center">Bienvenido a Pizza Planeta!</h1>
+			</div>
+		</div>
+		@if (TempData["ordenEnCamino"] != null)
+		{
+			string msj = (string)TempData["ordenEnCamino"];
+			<div class="alert alert-success" role="alert">@msj</div>
+		}
+		<h2>Cree su propia pizza!</h2>
+		<hr>
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="pill" href="#tamanoymasa"><span style="margin-right:3px;" class="badge pull-left">1</span>Tamaño y Masa</a></li>
+				<li><a data-toggle="pill" href="#ingredientes"><span style="margin-right:3px;" class="badge pull-left">2</span>Ingredientes</a></li>
+				<li><a data-toggle="pill" href="#direccion"><span style="margin-right:3px;" class="badge pull-left">3</span>Dirección de entrega</a></li>
+			</ul>
+			<form method="post" asp-page="VerOrden">
+				<div class="tab-content">
+					<div id="tamanoymasa" class="tab-pane fade in active">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="panel panel-default">
+									<!-- Default panel contents -->
+									<div class="panel-heading">Seleccione el tamaño de su pizza</div>
+									<!-- List group -->
+									<ul class="list-group">
+										<li class="list-group-item"><input style="margin-right:4px" id="pequena" type="radio" name="tamano" value="pequena" checked><label for="pequena">Pequeña</label></li>
+										<li class="list-group-item"><input style="margin-right:4px" id="mediana" type="radio" name="tamano" value="mediana"><label for="mediana">Mediana</label></li>
+										<li class="list-group-item"><input style="margin-right:4px" id="grande" type="radio" name="tamano" value="grande"><label for="grande">Grande</label></li>
+									</ul>
+								</div>
+
+								<div class="panel panel-default">
+									<!-- Default panel contents -->
+									<div class="panel-heading">Seleccione la masa de su pizza</div>
+									<!-- List group -->
+									<ul class="list-group">
+										<li class="list-group-item"><input style="margin-right:4px;" id="masaclasica" type="radio" name="masa" value="masaclasica" checked><label for="clasica">Clasica</label></li>
+										<li class="list-group-item"><input style="margin-right:4px" id="masaartesanal" type="radio" name="masa" value="masaartesanal"><label for="mediana">Artesanal</label></li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary tamanoymasasiguiente">Siguiente<i class="glyphicon glyphicon-chevron-right"></i></button></div>
+						</div>
+					</div>
+					<div id="ingredientes" class="tab-pane fade">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="panel panel-default">
+									<!-- Default panel contents -->
+									<div class="panel-heading">Seleccione los ingredientes de su pizza</div>
+									<!-- List group -->
+									<ul class="list-group">
+										<li class="list-group-item"><input style="margin-right:4px;" id="queso" type="checkbox" name="ingredientes" value="queso"><label for="queso">Queso</label><img src="https://i.dlpng.com/static/png/141585_preview.png" style="margin-left:40px;width:50px;height:50px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="hongos" type="checkbox" name="ingredientes" value="hongos"><label for="hongos">Hongos</label><img src="https://www.fondation-louisbonduelle.org/wp-content/uploads/2016/08/champignon-paris.png" style="margin-left:40px;width:50px;height:50px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="tomate" type="checkbox" name="ingredientes" value="tomate"><label for="tomate">Tomate</label><img src="https://pluspng.com/img-png/png-tomato-tomato-png-3531.png" style="margin-left:40px;width:50px;height:5	0px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="albahaca" type="checkbox" name="ingredientes" value="albahaca"><label for="albahaca">Albahaca</label><img src="https://images.vexels.com/media/users/3/149059/isolated/preview/570fb153da3b8532e24364206fcc80b9-ilustraci--n-de-hierba-de-albahaca-by-vexels.png" style="margin-left:27px;width:50px;height:50px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="jamon" type="checkbox" name="ingredientes" value="jamon"><label for="jamon">Jamón</label><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPkZmO4cIfZQ3BcRW0DU3v7H8LHbVsW9VHqA&usqp=CAUg" style="margin-left:41px;width:50px;height:50px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="carne" type="checkbox" name="ingredientes" value="carne"><label for="queso">Carne</label><img src="https://pluspng.com/img-png/png-steak-hp1-steak-png-900.png" style="margin-left:48px;width:50px;height:50px" class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="salchicha" type="checkbox" name="ingredientes" value="salchicha"><label for="queso">Salchicha</label><img src="https://i.ya-webdesign.com/images/breakfast-transparent-sausage-1.png" style="margin-left:22px;width:50px;height:50px" class="img-rounded"></li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary ingredientesatras" style="margin-right:5px"><i class="glyphicon glyphicon-chevron-left"></i>Atras</button><button type="button" class="float-right btn btn-primary ingredientessiguiente">Siguiente<i class="glyphicon glyphicon-chevron-right"></i></button></div>
+						</div>
+					</div>
+					<div id="direccion" class="tab-pane fade">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="panel panel-default">
+									<!-- Default panel contents -->
+									<div class="panel-heading">Ingrese una dirección de entrega</div>
+									<div class="panel-body">
+										<div class="form-horizonta">
+											<div class="form-group">
+												<div class="col-md-8">
+													<textarea style="resize:vertical" class="form-control" asp-for="direccion" rows="4" required></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary direccionatras" style="margin-right:5px"><i class="glyphicon glyphicon-chevron-left"></i>Atras</button><button class="float-right btn btn-success">Ver orden<i class="glyphicon glyphicon-shopping-cart"></i></button></div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(".tamanoymasasiguiente").click(function () {
+		$('.nav-pills li:eq(1) a').tab('show');
+	})
+
+	$(".ingredientessiguiente").click(function () {
+		$('.nav-pills li:eq(2) a').tab('show');
+	})
+
+	$(".ingredientesatras").click(function () {
+		$('.nav-pills li:eq(0) a').tab('show');
+	})
+
+	$(".direccionatras").click(function () {
+		$('.nav-pills li:eq(1) a').tab('show');
+	})
+</script>
+<script>
+	$(".alert-success").fadeOut(5000);
+</script>
+</html>

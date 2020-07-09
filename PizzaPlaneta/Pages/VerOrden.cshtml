@@ -1,0 +1,30 @@
+﻿@page
+@using PizzaPlaneta.Pizza;
+@model PizzaPlaneta.Pages.VerOrdenModel
+@{
+    ViewData["Title"] = "Pizza Planta: Confirme su orden!";
+}
+
+<h2>Su orden</h2>
+
+<div class="panel panel-primary">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Desglose de su orden</div>
+	<div class="panel-body">
+		<p><label style="margin-right:4px">Dirección de entrega: </label>@Model.direccion</p>
+	</div>
+	<!-- List group -->
+	<ul class="list-group">
+		@foreach (IPizza componente in Model.componentes)
+		{
+			<li class="list-group-item">@componente.GetNombre()<label style="margin:0px 2px 0px 10px;">@componente.GetPrecio()</label>₡</li>
+		}
+		<li class="list-group-item">Precio Total: <label style="margin:0px 2px 0px 10px;">@Model.precioRegular</label>₡</li>
+		<li class="list-group-item text-primary">Precio Total: <label style="margin:0px 2px 0px 10px;">@Model.precioConIva</label>₡ con IVA</li>
+	</ul>
+	<form method="post" enctype="multipart/form-data">
+		<div class="panel-footer text-right"><input type="submit" class="btn btn-success" value="Aceptar orden" asp-page-handler="aceptarorden"></input></div>
+	</form	>
+</div>
+</div>
+
