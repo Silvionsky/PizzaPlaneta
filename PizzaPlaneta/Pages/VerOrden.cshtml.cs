@@ -22,6 +22,8 @@ namespace PizzaPlaneta.Pages
 
 		[BindProperty] public double precioRegular { set; get; }
 
+		public List<IPizza> componentes { set; get; }
+
 		public void OnPost()
 		{	
 			List<string> pedido = new List<string>();
@@ -44,6 +46,8 @@ namespace PizzaPlaneta.Pages
 
 			calculadora.estrategia = new IvaEstrategiaCalcularPrecio();
 			precioConIva = calculadora.ObtenerPrecioTotal(nuevaOrden);
+
+			componentes = pizza.GetComponentes();
 		}
 
 		public void OnPostAceptar()

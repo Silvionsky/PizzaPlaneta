@@ -10,14 +10,6 @@ namespace PizzaPlaneta.Pages
 {
 	public class CrearPizzaModel : PageModel
 	{	
-		[BindProperty] public string tamano { set; get; }
-
-		[BindProperty] public string masa { set; get; }
-
-		[BindProperty] public List<string> ingredientes { set; get; }
-
-		[BindProperty] public string direccion { set; get; }
-
 		public void OnPost()
 		{
 

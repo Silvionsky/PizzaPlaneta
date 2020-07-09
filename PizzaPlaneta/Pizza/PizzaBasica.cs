@@ -19,6 +19,13 @@ namespace PizzaPlaneta.Pizza
 			return this.tamano;
 		}
 
+		public List<IPizza> GetComponentes()
+		{
+			List<IPizza> componentes = new List<IPizza>();
+			componentes.Add(this);
+			return componentes;
+		}
+
 		public double GetPrecio()
 		{
 			double precio = 0.0;
@@ -41,6 +48,11 @@ namespace PizzaPlaneta.Pizza
 		public double GetPrecioTotal()
 		{
 			return GetPrecio();
+		}
+
+		public string GetNombre()
+		{
+			return tamano;
 		}
 
 	}

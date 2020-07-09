@@ -1,4 +1,5 @@
 ﻿using PizzaPlaneta.Pizza;
+using System.Collections.Generic;
 
 namespace PizzaPlaneta.Ingredientes
 {
@@ -19,13 +20,26 @@ namespace PizzaPlaneta.Ingredientes
 			return pizza.GetIngredientes() + ", " + nombre;
 		}
 
+		public List<IPizza> GetComponentes()
+		{
+			List<IPizza> componentes = pizza.GetComponentes();
+			componentes.Add(this);
+			return componentes;
+		}
+
 		public double GetPrecio()
 		{
 			return precio;
 		}
+
 		public double GetPrecioTotal()
 		{
 			return pizza.GetPrecioTotal() + GetPrecio();
+		}
+
+		public string GetNombre()
+		{
+			return nombre;
 		}
 	}
 }

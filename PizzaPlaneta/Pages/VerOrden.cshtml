@@ -1,16 +1,21 @@
 ﻿@page
+@using PizzaPlaneta.Pizza;
 @model PizzaPlaneta.Pages.VerOrdenModel
 @{
     ViewData["Title"] = "Pizza Planta: Confirme su orden!";
 }
 
-<h2>Su orden</h2>
+<h2>Orden</h2>
 
 <div class="panel panel-primary">
 	<!-- Default panel contents -->
-	<div class="panel-heading">Desglose</div>
+	<div class="panel-heading">Descripción de su orden</div>
 	<!-- List group -->
 	<ul class="list-group">
+		@foreach (IPizza componente in Model.componentes)
+		{
+			<li class="list-group-item">@componente.GetNombre()<label style="margin:0px 2px 0px 10px;">@componente.GetPrecio()</label>₡</li>
+		}
 		<li class="list-group-item">Precio Total: @Model.precioRegular</li>
 		<li class="list-group-item text-primary">Precio Total: @Model.precioConIva con IVA</li>
 	</ul>
