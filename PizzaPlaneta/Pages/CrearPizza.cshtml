@@ -17,7 +17,11 @@
 				<h1 class="text-center">Bienvenido a Pizza Planeta!</h1>
 			</div>
 		</div>
-
+		@if (TempData["ordenEnCamino"] != null)
+		{
+			string msj = (string)TempData["ordenEnCamino"];
+			<div class="alert alert-success" role="alert">@msj</div>
+		}
 		<h2>Cree su propia pizza!</h2>
 		<hr>
 		<div class="container">
@@ -63,7 +67,7 @@
 									<div class="panel-heading">Seleccione los ingredientes de su pizza</div>
 									<!-- List group -->
 									<ul class="list-group">
-										<li class="list-group-item"><input style="margin-right:4px;" id="queso" type="checkbox" name="ingredientes" value="queso"><label for="queso">Queso</label><img src="https://i.dlpng.com/static/png/141585_preview.png" style="margin-left:40px;width:50px;height:50px"class="img-rounded"></li>
+										<li class="list-group-item"><input style="margin-right:4px;" id="queso" type="checkbox" name="ingredientes" value="queso"><label for="queso">Queso</label><img src="https://i.dlpng.com/static/png/141585_preview.png" style="margin-left:40px;width:50px;height:50px" class="img-rounded"></li>
 										<li class="list-group-item"><input style="margin-right:4px;" id="hongos" type="checkbox" name="ingredientes" value="hongos"><label for="hongos">Hongos</label><img src="https://www.fondation-louisbonduelle.org/wp-content/uploads/2016/08/champignon-paris.png" style="margin-left:40px;width:50px;height:50px" class="img-rounded"></li>
 										<li class="list-group-item"><input style="margin-right:4px;" id="tomate" type="checkbox" name="ingredientes" value="tomate"><label for="tomate">Tomate</label><img src="https://pluspng.com/img-png/png-tomato-tomato-png-3531.png" style="margin-left:40px;width:50px;height:5	0px" class="img-rounded"></li>
 										<li class="list-group-item"><input style="margin-right:4px;" id="albahaca" type="checkbox" name="ingredientes" value="albahaca"><label for="albahaca">Albahaca</label><img src="https://images.vexels.com/media/users/3/149059/isolated/preview/570fb153da3b8532e24364206fcc80b9-ilustraci--n-de-hierba-de-albahaca-by-vexels.png" style="margin-left:27px;width:50px;height:50px" class="img-rounded"></li>
@@ -95,8 +99,8 @@
 							</div>
 							<div class="panel-footer text-right"><button type="button" class="float-right btn btn-primary direccionatras" style="margin-right:5px"><i class="glyphicon glyphicon-chevron-left"></i>Atras</button><button class="float-right btn btn-success">Ver orden<i class="glyphicon glyphicon-shopping-cart"></i></button></div>
 						</div>
-							</div>
 					</div>
+				</div>
 			</form>
 		</div>
 	</main>
@@ -118,5 +122,8 @@
 	$(".direccionatras").click(function () {
 		$('.nav-pills li:eq(1) a').tab('show');
 	})
+</script>
+<script>
+	$(".alert-success").fadeOut(5000);
 </script>
 </html>

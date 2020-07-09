@@ -50,9 +50,12 @@ namespace PizzaPlaneta.Pages
 			componentes = pizza.GetComponentes();
 		}
 
-		public void OnPostAceptar()
+		public ActionResult OnPostAceptarOrden()
 		{
 			// TODO: Set mensaje de confirmacion y redireccionar a CrearPizza
+			TempData["ordenEnCamino"] = "Su pizza ya está en camino!";
+
+			return Redirect("/CrearPizza");
 		}
 
 		public void OnPostCancelar()
