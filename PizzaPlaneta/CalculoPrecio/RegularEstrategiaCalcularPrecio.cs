@@ -6,8 +6,6 @@ namespace PizzaPlaneta.CalculoPrecio
 	{
 		public double ObtenerPrecioTotal(Orden orden)
 		{
-			
-
 			return orden.pizza.GetPrecioTotal();
 		}
 	}

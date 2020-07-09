@@ -4,7 +4,7 @@ namespace PizzaPlaneta.CalculoPrecio
 {
 	public class IvaEstrategiaCalcularPrecio : IEstrategiaCalcularPrecio
 	{
-		private const double IVA = 13;
+		public const double IVA = 13;
 
 		public double ObtenerPrecioTotal(Orden orden)
 		{

@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PizzaPlaneta.Fabrica;
-using PizzaPlaneta.Ingredientes;
 using PizzaPlaneta.Pizza;
 
 namespace PizzaPlaneta.Tests
